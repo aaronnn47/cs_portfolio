@@ -8,16 +8,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace portfolio.Controllers
 {
-    [Route("blog")]
+
     public class BlogController : Controller
     {
         // GET: /<controller> 
         public IActionResult Index()
         {
             var model = new portfolio.Models.Blog();
-            model.name = "aaron kim";
+            model.name = "aaron";
 
             return View(model);
+        }
+
+        public IActionResult Create(string blog)
+        {
+            var model = new portfolio.Models.Blog();
+            model.post = blog;
+
+            return View("Index", model);
         }
     }
 }

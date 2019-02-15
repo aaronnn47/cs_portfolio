@@ -2,4 +2,18 @@
 @model portfolio.Models.Blog;
 
 
-<h1>@Model.name</h1>
+@*<h1>@Model.name</h1>*@
+
+@if(@Model.post == null)
+{
+    <h1>First</h1>
+}else
+{
+    <h1>@Model.post</h1>
+}
+
+
+<form asp-action="Create" >
+    <input name="blog" />
+    <input type="submit" />
+</form>
